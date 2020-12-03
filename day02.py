@@ -1,5 +1,6 @@
 print('part 1')
 
+# quick find_all instances of char `a` in string `s`
 def find_all(a, s):
     count = 0
     for l in s:
@@ -11,6 +12,7 @@ def day2(filename='day2_input.txt'):
     valid = 0
     with open(filename) as f:
         for line in f:
+            # 5-10 s: nskdmzwrmpmhsrzts
             rule, passw = line.split(': ')
             passw = passw.strip()
             count, letter = rule.split()
@@ -50,6 +52,7 @@ def day2p2():
     valid = 0
     for r in rules:
         first, second, letter, passw = r
+        # XOR
         if passw[first-1] == letter or passw[second-1] == letter:
             if passw[first-1] == letter and passw[second-1] == letter:
                 continue
