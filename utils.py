@@ -9,7 +9,8 @@ def get_file(filename, parsing_fn):
             lines.append(parsing_fn(line))
     return lines
 
-# Usage: generate_template(5)
+# import utils as ut
+# ut.generate_template(4)
 def generate_template(day):
     day = format(day, '02d') # left-pad a zero
 
