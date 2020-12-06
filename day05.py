@@ -8,17 +8,30 @@ def day05p1():
     lines = ut.get_file('day05_input.txt', parse1)
     max_seat_id = 0
     for line in lines:
-        s = ''
-        for letter in line[:-3]:
-            if letter == 'F': s += '0'
-            if letter == 'B': s += '1'
-        row_num = int(s, 2)
-        s = ''
-        for letter in line[-3:]:
-            if letter == 'L': s += '0'
-            if letter == 'R': s += '1'
-        col_num = int(s, 2)
-        max_seat_id = max(max_seat_id, row_num * 8 + col_num)
+        # s = ''
+        # for letter in line[:-3]:
+        #     if letter == 'F': s += '0'
+        #     if letter == 'B': s += '1'
+        # row_num = int(s, 2)
+        #
+        # s = ''
+        # for letter in line[-3:]:
+        #     if letter == 'L': s += '0'
+        #     if letter == 'R': s += '1'
+        # col_num = int(s, 2)
+        #
+        # max_seat_id = max(max_seat_id, row_num * 8 + col_num)
+
+        mapping = {
+            'F': '0',
+            'B': '1',
+            'L': '0',
+            'R': '1'
+        }
+        for k,v in mapping.items():
+            line = line.replace(k,v)
+
+        max_seat_id = max(max_seat_id, int(line, 2))
     return max_seat_id
 
 print(day05p1()) # 7:35
