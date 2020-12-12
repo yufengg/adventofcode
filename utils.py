@@ -22,7 +22,8 @@ def generate_template(day):
     part1 = \
 f"""def day{day}p1():
     print('day {day} part 1')
-    lines = ut.get_file('day{day}_input.txt', parse1)
+    # lines = ut.get_file('day{day}_input.txt', parse1)
+    lines = ut.get_file('day{day}_input_small.txt', parse1)
     return
 
 print(day{day}p1())
@@ -32,7 +33,8 @@ print(day{day}p1())
     part2 = \
 f"""def day{day}p2():
     print('day {day} part 2')
-    lines = ut.get_file('day{day}_input.txt', parse2)
+    # lines = ut.get_file('day{day}_input.txt', parse2)
+    lines = ut.get_file('day{day}_input_small.txt', parse2)
     return
 
 print(day{day}p2())
@@ -42,4 +44,7 @@ print(day{day}p2())
         f.write(file_contents)
 
     with open(f'day{day}_input.txt', 'w') as f:
+        f.write('')
+
+    with open(f'day{day}_input_small.txt', 'w') as f:
         f.write('')
