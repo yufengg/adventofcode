@@ -33,7 +33,7 @@ def day15p1():
         mem[spoken].append(i)
         prev = spoken
 
-        print(prev)
+        # print(prev)
         # break
 
     return prev #17min
